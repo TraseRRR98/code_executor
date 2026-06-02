@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import { Box } from '@chakra-ui/react';
 import { Editor } from '@monaco-editor/react';
+import LanguageSelector from './LanguageSelector';
 
 const CodeEditor = () => {
     const editorRef = useRef();
@@ -13,6 +14,7 @@ const CodeEditor = () => {
 
     return (
         <Box>
+            <LanguageSelector />
             <Editor 
                 height="90vh" 
                 theme="vs-light" 
