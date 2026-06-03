@@ -3,7 +3,7 @@ import { LANGUAGES_VERSIONS } from './constants';
 
 const API = axios.create
 ({
-    baseURL: "http://localhost:2000/api/v2/piston"
+    baseURL: "/api/v2"
 })
 
 export const executeCode = async (language, sourceCode) =>
