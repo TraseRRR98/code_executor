@@ -7,6 +7,7 @@ const Output = ({ editorRef, language }) => {
 
     const [output, setOutput] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
+    const [isError, setIsError] = useState(false);
 
     const runCode = async () =>
     {
@@ -17,6 +18,7 @@ const Output = ({ editorRef, language }) => {
             setIsLoading(true);
             const {run: result} = await executeCode(language, sourceCode);
             setOutput(result.output);
+            result.stderr ? setIsError(true) : setIsError(false);
         }
         catch (error)
         {
@@ -44,11 +46,13 @@ const Output = ({ editorRef, language }) => {
             Run Code
         </Button>
         <Box 
+            color={isError ? "red.400" : ""}
             height="75vh" 
             bg="gray.900"  
             p={2} 
-            border="1px solid #482050"
+            border="1px solid"
             borderRadius={4}
+            borderColor={isError ? "red.500" : "#482050"}
         >
             {output ? output : 'Click "Run Code" to see the output...'}
         </Box>

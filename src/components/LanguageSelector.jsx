@@ -2,7 +2,7 @@ import { Box, Text, Menu, Button } from '@chakra-ui/react';
 import { LANGUAGES_VERSIONS } from '../constants';
 
 const languages = Object.entries(LANGUAGES_VERSIONS);
-const ACTIVE_COLOR = "#482050";
+
 const LanguageSelector = ({ language, onSelect }) => {
     return (
         <Box ml={2} mb={4}>
