@@ -6,7 +6,7 @@ const languages = Object.entries(LANGUAGES_VERSIONS);
 const LanguageSelector = () => {
     return (
         <Box>
-            <Text mb={2} fontSize="lg" color="gray.500">Language: </Text>
+            <Text mb={2} fontSize="lg" color="gray.400">Language: </Text>
             <Menu.Root>
                 <Menu.Trigger asChild>
                     <Button>Python</Button>
