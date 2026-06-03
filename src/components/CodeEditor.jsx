@@ -22,17 +22,24 @@ const CodeEditor = () => {
 
     return (
         <Box>
-            <LanguageSelector language={language} onSelect={onSelect}/>
-            <Editor 
-                height="75vh" 
-                theme="vs-light" 
-                language={language} 
-                value={value}
-                onMount={onMount}
-                onChange={
-                    (value) => setValue(value)
-                } 
-            />
+        <HStack spacing={4}>
+            <Box width="50%">
+                <LanguageSelector language={language} onSelect={onSelect}/>
+                    <Editor 
+                        height="75vh" 
+                        theme="vs-light" 
+                        language={language} 
+                        value={value}
+                        onMount={onMount}
+                        onChange={
+                            (value) => setValue(value)
+                        } 
+                    />
+            </Box>
+            <Box width="50%">
+                <Text>Output</Text>
+            </Box>
+        </HStack>
         </Box>
     )
 }
