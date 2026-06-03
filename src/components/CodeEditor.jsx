@@ -5,20 +5,26 @@ import LanguageSelector from './LanguageSelector';
 
 const CodeEditor = () => {
     const editorRef = useRef();
-        const [value, setValue] = useState("");
+    const [value, setValue] = useState("");
+    const [language, setLanguage] = useState("python");
 
     const onMount = (editor) => {
         editorRef.current = editor;
         editor.focus();
     }
 
+    const onSelect = (language) =>
+    {
+        setLanguage(language);
+    }
+
     return (
         <Box>
-            <LanguageSelector />
+            <LanguageSelector language={language} onSelect={onSelect}/>
             <Editor 
-                height="90vh" 
+                height="75vh" 
                 theme="vs-light" 
-                defaultLanguage="python" 
+                language={language} 
                 defaultValue="// some comment" 
                 value={value} 
                 onMount={onMount}
