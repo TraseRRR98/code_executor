@@ -1,4 +1,5 @@
 import { Box, Text, Button } from '@chakra-ui/react'
+import { executeCode } from '../api';
 
 const Output = ({ editorRef, language }) => {
 
@@ -8,18 +9,20 @@ const Output = ({ editorRef, language }) => {
         if (!sourceCode) return;
         try 
         {
-            
+            const {} = await executeCode(language, sourceCode);
         }
         catch (error)
         {
-
+            console.log(error.response?.data);
         }
     }
 
   return (
     <Box width="50%">
         <Text mb={2} fontSize="lg" color="gray.400">Output: </Text>
-        <Button variant="outline" color="white" borderColor="gray.700" mb={4}>
+        <Button variant="outline" color="white" borderColor="gray.700" mb={4}
+            onClick={runCode}
+        >
             Run Code
         </Button>
         <Box 
