@@ -3,7 +3,7 @@ import { Box, Text, Button } from '@chakra-ui/react'
 import { toaster } from './ui/toaster'
 import { executeCode } from '../api';
 import { useState } from 'react';
-
+//TODO: On the phone, the outputs should be stackable on top of each other instead of side by side
 const Output = ({ editorRef, language }) => {
 
     const [output, setOutput] = useState(null);
@@ -47,7 +47,7 @@ const Output = ({ editorRef, language }) => {
             Run Code
         </Button>
         <Box 
-            color={isError ? "red.400" : ""}
+            color={isError ? "red.400" : "green.400"}
             height="75vh" 
             bg="gray.900"  
             p={2} 
@@ -57,7 +57,7 @@ const Output = ({ editorRef, language }) => {
         >
             {output ? 
                 output.map((line, i) => (<Text key={i}>{line}</Text>))
-                : 'Click "Run Code" to see the output...'}
+                : <Text color="gray.400">Click "Run Code" to see the output...</Text>}
         </Box>
     </Box>
   )
