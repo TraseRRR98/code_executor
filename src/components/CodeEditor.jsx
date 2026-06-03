@@ -2,10 +2,11 @@ import { useState, useRef } from 'react';
 import { Box } from '@chakra-ui/react';
 import { Editor } from '@monaco-editor/react';
 import LanguageSelector from './LanguageSelector';
+import { CODE_SNIPPETS } from '../constants';
 
 const CodeEditor = () => {
     const editorRef = useRef();
-    const [value, setValue] = useState("");
+    const [value, setValue] = useState(CODE_SNIPPETS["python"]);
     const [language, setLanguage] = useState("python");
 
     const onMount = (editor) => {
@@ -16,6 +17,7 @@ const CodeEditor = () => {
     const onSelect = (language) =>
     {
         setLanguage(language);
+        setValue(CODE_SNIPPETS[language]);
     }
 
     return (
@@ -25,8 +27,7 @@ const CodeEditor = () => {
                 height="75vh" 
                 theme="vs-light" 
                 language={language} 
-                defaultValue="// some comment" 
-                value={value} 
+                value={value}
                 onMount={onMount}
                 onChange={
                     (value) => setValue(value)
