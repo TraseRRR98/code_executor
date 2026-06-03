@@ -12,18 +12,18 @@ export const LANGUAGES_VERSIONS = {
 
 export const CODE_SNIPPETS =
 {
-    python: `print("Hello, World!")`,
+    python: `print("Hello World!")`,
     gcc: `#include <iostream>\n
 using namespace std;\n
 int main() {
-    cout << "Hello, World!" << endl;
+    cout << "Hello World!" << endl;
     return 0;
 }`,
     php: `<?php
-echo "Hello, World!";
+echo "Hello World!";
     `,
     java: `public class Main {\n
 public static void main(String[] args) {
-System.out.println("Hello, World!");
+System.out.println("Hello World!");
 }}`,
 }

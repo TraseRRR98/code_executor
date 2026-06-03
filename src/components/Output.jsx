@@ -1,7 +1,10 @@
 import { Box, Text, Button } from '@chakra-ui/react'
 import { executeCode } from '../api';
+import { useState } from 'react';
 
 const Output = ({ editorRef, language }) => {
+
+    const [output, setOutput] = useState(null);
 
     const runCode = async () =>
     {
@@ -9,7 +12,8 @@ const Output = ({ editorRef, language }) => {
         if (!sourceCode) return;
         try 
         {
-            const {} = await executeCode(language, sourceCode);
+            const {run:result} = await executeCode(language, sourceCode);
+            setOutput(result.output);
         }
         catch (error)
         {
@@ -32,7 +36,7 @@ const Output = ({ editorRef, language }) => {
             border="1px solid #482050"
             borderRadius={4}
         >
-            test
+            {output ? output : 'Click "Run Code" to see the output...'}
         </Box>
     </Box>
   )
