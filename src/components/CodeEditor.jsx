@@ -1,8 +1,9 @@
 import { useState, useRef } from 'react';
-import { Box } from '@chakra-ui/react';
+import { Box, HStack } from '@chakra-ui/react';
 import { Editor } from '@monaco-editor/react';
 import LanguageSelector from './LanguageSelector';
 import { CODE_SNIPPETS } from '../constants';
+import Output from './Output';
 
 const CodeEditor = () => {
     const editorRef = useRef();
@@ -36,9 +37,7 @@ const CodeEditor = () => {
                         } 
                     />
             </Box>
-            <Box width="50%">
-                <Text>Output</Text>
-            </Box>
+            <Output />
         </HStack>
         </Box>
     )
