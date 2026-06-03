@@ -1,5 +1,5 @@
 import axios from "axios";
-import { LANGUAGES_VERSIONS, FILE_EXTENSIONS } from './constants';
+import { LANGUAGES_VERSIONS } from './constants';
 
 const API = axios.create
 ({
@@ -14,7 +14,6 @@ export const executeCode = async (language, sourceCode) =>
         "files":
         [
             {
-                name: FILE_EXTENSIONS[language],
                 content: sourceCode,
             }
         ]})

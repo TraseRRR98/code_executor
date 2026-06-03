@@ -1,5 +1,5 @@
 import { Box, Text, Menu, Button } from '@chakra-ui/react';
-import { LANGUAGES_VERSIONS, LANGUAGE_DISPLAY_NAMES } from '../constants';
+import { LANGUAGES_VERSIONS } from '../constants';
 
 const languages = Object.entries(LANGUAGES_VERSIONS);
 const ACTIVE_COLOR = "#482050";
@@ -9,7 +9,7 @@ const LanguageSelector = ({ language, onSelect }) => {
             <Text mb={2} fontSize="lg" color="gray.400">Language: </Text>
             <Menu.Root isLazy>
                 <Menu.Trigger asChild>
-                    <Button color="#482050">{LANGUAGE_DISPLAY_NAMES[language] ?? language}</Button>
+                    <Button color="#482050">{language}</Button>
                 </Menu.Trigger>
                 <Menu.Positioner>
                     <Menu.Content  bg="#482050" color="white">
@@ -27,7 +27,7 @@ const LanguageSelector = ({ language, onSelect }) => {
                                 }
                             }
                             onClick={() => onSelect(lang)}>
-                                {LANGUAGE_DISPLAY_NAMES[lang] ?? lang}
+                                {lang}
                                 &nbsp;
                                 <Text fontSize="sm" color="gray.500">
                                     {version}
