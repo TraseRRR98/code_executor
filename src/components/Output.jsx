@@ -5,6 +5,7 @@ import { useState } from 'react';
 const Output = ({ editorRef, language }) => {
 
     const [output, setOutput] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
 
     const runCode = async () =>
     {
@@ -12,12 +13,17 @@ const Output = ({ editorRef, language }) => {
         if (!sourceCode) return;
         try 
         {
+            setIsLoading(true);
             const {run:result} = await executeCode(language, sourceCode);
             setOutput(result.output);
         }
         catch (error)
         {
             console.log(error.response?.data);
+        }
+        finally
+        {
+            setIsLoading(false);
         }
     }
 
