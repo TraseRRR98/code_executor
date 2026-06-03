@@ -1,3 +1,4 @@
+// This component is used to render the code editor and the output
 import { useState, useRef } from 'react';
 import { Box, HStack } from '@chakra-ui/react';
 import { Editor } from '@monaco-editor/react';

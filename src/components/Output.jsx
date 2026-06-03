@@ -1,3 +1,4 @@
+// This component is used to render the output of the code
 import { Box, Text, Button } from '@chakra-ui/react'
 import { toaster } from './ui/toaster'
 import { executeCode } from '../api';

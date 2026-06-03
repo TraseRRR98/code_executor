@@ -1,3 +1,4 @@
+// This component is used to provide the theme and the chakra provider
 import { ChakraProvider, defaultSystem } from '@chakra-ui/react'
 import { ThemeProvider } from 'next-themes'
 

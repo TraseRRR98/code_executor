@@ -1,3 +1,4 @@
+# This script is used to retrieve the runtimes from the Piston API
 import requests
 # Define the endpoint URL
 url = "https://emkc.org/api/v2/piston/runtimes"
@@ -5,7 +6,6 @@ url = "https://emkc.org/api/v2/piston/runtimes"
 # Send a GET request
 response = requests.get(url)
 
-# Check if the request was successful
 if response.status_code == 200:
     runtimes_data = response.json()
     

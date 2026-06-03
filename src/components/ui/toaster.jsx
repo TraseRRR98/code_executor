@@ -1,3 +1,4 @@
+// This component is used to render the toaster
 import { createToaster, Toaster as ChakraToaster, Toast } from '@chakra-ui/react'
 
 export const toaster = createToaster({

@@ -1,3 +1,4 @@
+// This component is used to select the language for the code editor
 import { Box, Text, Menu, Button } from '@chakra-ui/react';
 import { LANGUAGES_VERSIONS } from '../constants';
 
