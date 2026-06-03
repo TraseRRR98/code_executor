@@ -1,3 +1,6 @@
+export const LANGUAGE_DISPLAY_NAMES = {
+    gcc: "c++",
+};
 // if API updates, then we have to update this
 // ideally, fetch this from the API and use this to build a versions dynamically
 export const LANGUAGES_VERSIONS = {
