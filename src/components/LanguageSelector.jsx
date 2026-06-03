@@ -17,7 +17,7 @@ const LanguageSelector = ({ language, onSelect }) => {
                             <Menu.Item key={language} value={language} onClick={() => onSelect(language)}>
                                 {language}
                                 &nbsp;
-                                <Text as="span" fontSize="sm" color="gray.500">
+                                <Text fontSize="sm" color="gray.500">
                                     {version}
                                 </Text>
                             </Menu.Item>
