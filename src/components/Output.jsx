@@ -18,7 +18,7 @@ const Output = ({ editorRef, language }) => {
         {
             setIsLoading(true);
             const {run: result} = await executeCode(language, sourceCode);
-            setOutput(result.output);
+            setOutput(result.output.split("\n"));
             result.stderr ? setIsError(true) : setIsError(false);
         }
         catch (error)
@@ -55,7 +55,9 @@ const Output = ({ editorRef, language }) => {
             borderRadius={4}
             borderColor={isError ? "red.500" : "#482050"}
         >
-            {output ? output : 'Click "Run Code" to see the output...'}
+            {output ? 
+                output.map((line, i) => (<Text key={i}>{line}</Text>))
+                : 'Click "Run Code" to see the output...'}
         </Box>
     </Box>
   )
