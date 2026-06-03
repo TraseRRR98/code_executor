@@ -1,6 +1,13 @@
 export const LANGUAGE_DISPLAY_NAMES = {
     gcc: "c++",
 };
+
+export const FILE_EXTENSIONS = {
+    python: "main.py",
+    gcc: "main.cpp",
+    php: "main.php",
+    java: "Main.java",
+};
 // if API updates, then we have to update this
 // ideally, fetch this from the API and use this to build a versions dynamically
 export const LANGUAGES_VERSIONS = {
