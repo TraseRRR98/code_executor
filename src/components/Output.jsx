@@ -1,6 +1,21 @@
 import { Box, Text, Button } from '@chakra-ui/react'
 
-const Output = () => {
+const Output = ({ editorRef, language }) => {
+
+    const runCode = async () =>
+    {
+        const sourceCode = editorRef.current.getValue();
+        if (!sourceCode) return;
+        try 
+        {
+            
+        }
+        catch (error)
+        {
+
+        }
+    }
+
   return (
     <Box width="50%">
         <Text mb={2} fontSize="lg" color="gray.400">Output: </Text>
