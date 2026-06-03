@@ -9,10 +9,10 @@ const LanguageSelector = ({ language, onSelect }) => {
             <Text mb={2} fontSize="lg" color="gray.400">Language: </Text>
             <Menu.Root>
                 <Menu.Trigger asChild>
-                    <Button>{language}</Button>
+                    <Button color="#482050">{language}</Button>
                 </Menu.Trigger>
                 <Menu.Positioner>
-                    <Menu.Content>
+                    <Menu.Content  bg="#482050" color="white">
                         {languages.map(([language, version]) => (
                             <Menu.Item key={language} value={language} onClick={() => onSelect(language)}>
                                 {language}
